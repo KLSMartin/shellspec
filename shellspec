@@ -430,7 +430,7 @@ if [ "$SHELLSPEC_PROFILER" ] && [ "$SHELLSPEC_WORKERS" -gt 0 ]; then
 fi
 
 case $SHELLSPEC_MODE in (runner | list | translate | syntax-check)
-  [ $# -eq 0 ] && set -- "$SHELLSPEC_DEFAULT_PATH"
+  [ $# -eq 0 ] && set -- "$SHELLSPEC_PROJECT_ROOT/$SHELLSPEC_DEFAULT_PATH"
   if includes_pathstar "$@"; then
     for p in "$@"; do
       includes_pathstar "$p" || continue
